@@ -1,9 +1,6 @@
-version: 2
+version: 2.1
 jobs:
-  build:
+  test:
     docker:
-      - image: circleci/golang:1.15
-    working_directory: /go/src/github.com/emailtovamos/CircleCI1
-    steps:
-      - checkout
-      - run: go test -v ./...
+      - image: cimg/base:2022.11
+    parallelism: 4
